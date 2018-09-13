@@ -1,0 +1,8 @@
+<?php
+$loginForm->prepare();
+echo $this->form()->openTag($loginForm);
+echo $this->formRow($loginForm->get('userName'));
+echo $this->formRow($loginForm->get('password'));
+echo $this->formRow($loginForm->get('submit'));
+echo $this->form()->closeTag();
+
