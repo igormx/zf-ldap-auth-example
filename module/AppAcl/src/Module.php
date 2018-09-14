@@ -40,7 +40,8 @@ class Module
         $this->rbacContainer=new Rbac();
 
         $serviceManager=$mvcEvent->getApplication()->getServiceManager();
-        $rbacConfiguration=$serviceManager->get('config')['rbac-permission'];
+        $permissionTable=$serviceManager->get(PermissionTable::class);
+        $rbacConfiguration=$permissionTable->getConfiguration();
 
         foreach ($rbacConfiguration['roles'] as $role => $permissions) {
             $this->rbacContainer->addRole($role);
